@@ -1,5 +1,6 @@
+# Read data from text file
 colclasses = c("character", "character", rep("numeric",7))
-data <- read.csv("household_power_consumption.txt", colClasses = colclasses, na.strings=c("?"), sep=";")
+data <- read.csv("household_power_consumption.txt", header=TRUE, colClasses = colclasses, na.strings=c("?"), sep=";")
 # Convert DateTime (character) to a real Date
 data$DateTime <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 
